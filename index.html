@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Cuentas Corrientes</title>
+</head>
+<body>
+    <h1>Cuentas Corrientes</h1>
+
+
+
+        <!-- Agregar Cliente con SUBMIT -->
+        <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAgregarCliente" aria-expanded="false" aria-controls="collapseAgregarCliente">
+            Agregar Cliente
+          </button>
+
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModificarCliente" aria-expanded="false" aria-controls="collapseExample">
+            Eliminar Cliente
+          </button>
+        </p>
+          <div class="collapse" id="collapseAgregarCliente">
+            <div class="card card-body">
+                <form class="col-xl-6 col-md-12" id="formulario">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                    <label for="dni" class="form-label">DNI</label>
+                    <input type="number" class="form-control" id="dni">
+                    <label for="saldo" class="form-label">Saldo</label>
+                    <input type="number" class="form-control" id="saldo">
+                    <button type="submit" class="btn colorBoton my-2">Guardar</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="collapse" id="collapseModificarCliente">
+            <div class="card card-body">
+                <form class="col-xl-6 col-md-12" id="formularioEliminarCliente">
+                    <label for="dni" class="form-label">Ingrese el DNI del Cliente que quiere borrar</label>
+                    <input type="text" class="form-control" id="dniaeliminar">
+                    <button type="submit" class="btn colorBoton my-2">Eliminar</button>
+                </form>
+            </div>
+          </div>
+
+        <br>
+
+        <section id="principal">
+            
+            <br>
+            <article>
+                <label>LISTADO DE CUENTAS Corrientes</label>
+
+
+                <h3>Buscador de Cliente</h3>
+                <hr>
+                <input type="button" value="Saldos Menor-Mayor" onClick="ordenarClientesSaldoMenorMayor()">
+                <input type="button" value="Saldos Mayor-Menor" onClick="ordenarClientesSaldoMayorMenor()">
+                <div class="container">
+                <input type="text" id="formularioBuscador" class="form-control my-2" placeholder="Ingrese el producto que desea ver">
+                </div>
+
+                <div class="contenedor" id="resultadoBuscador"></div>
+                <h5><span id="total"></span></h5>
+            </article>
+            <article>
+                
+                <h3>Clientes Eliminados</h3>
+                <div class="clientesEliminados" id="InfoClientes"></div>
+                <!-- Aqui tabla -->
+            </article>
+        </section>
+
+        <script src="cuentascorriente.js"></script>
+        <script src="buscador.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        
+</body>
+</html>
