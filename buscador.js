@@ -15,7 +15,18 @@ const filtrar = () =>{
     let tablaBody = document.createElement("tbody");
 
     const texto = formularioBuscador.value.toLowerCase();
+    tabla.innerHTML += `
+    <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Saldo</th>
+    </tr>
+  </thead>
+  `;
     for ( let clientebuscador of arrayClientes ){
+
         let nombre = clientebuscador.nombre.toLowerCase();
 
         if ( nombre.indexOf(texto) !== -1){
