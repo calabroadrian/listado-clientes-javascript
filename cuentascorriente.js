@@ -53,6 +53,7 @@ guardarEnLocalStorageEliminado();
 function altaDeCliente(){
 const formulario = document.getElementById("formulario");
 
+
 formulario.addEventListener("submit", (e) => {
     //Evito el comportamiento por default del formulario. 
     e.preventDefault();
@@ -121,12 +122,43 @@ calcularTotal();
 }
 eliminarCliente()
 
-
-
-//Función Consultar bajas de clientes:
-
-
-//Función para modificar un cliente:
+//Eliminar un cliente:
+function modificarCliente(){
+    const formularioModificarCliente = document.getElementById("formularioModificarCliente");
+    const formularioOriginal = formularioModificarCliente.innerHTML
+    formularioModificarCliente.addEventListener("submit", (e) => {
+        //Evito el comportamiento por default del formulario. 
+        e.preventDefault();
+    
+        const dniModificar = parseInt(document.getElementById("dniModificar").value);
+        const saldoModificado = parseInt(document.getElementById("saldoModificado").value);
+        const clienteAmodificar = arrayClientes.find(clienteaeliminar => clienteaeliminar.dni === dniModificar);
+        const indice = arrayClientes.indexOf(clienteAmodificar);
+        if (indice > -1){
+        arrayClientes[indice].saldo = saldoModificado;
+    
+        //  Guardo en el localstorage
+        guardarEnLocalStorage();
+        guardarEnLocalStorageEliminado();
+        //Verificamos por consola:
+        console.log(arrayClientes);
+    
+        //Reseteamos el formulario: 
+        formularioModificarCliente.innerHTML = '';
+        formularioModificarCliente.innerHTML = formularioOriginal;
+        formularioModificarCliente.reset();
+        mostrarInfoClientes();
+        buscadorDeCliente();
+        }
+        if (indice <= -1){
+    
+        formularioModificarCliente.innerHTML += `<li>Cliente no encontrado</li>`
+        }
+    calcularTotal();
+    })
+    
+    }
+    modificarCliente()
 
 function modificacionCliente() {
     let dni = parseInt(prompt("Ingrese el DNI del cliente: "));
@@ -210,37 +242,3 @@ clienteTabla.append(tabla);
 }
 
 mostrarInfoClientes();
-
-//Ejecuto el menu:
-/*
-let opcion = menu();
-switch (opcion) {
-    case 1:
-        altaCliente();
-        break;
-    case 2:
-        bajaCliente();
-        break;
-    case 3:
-        modificacionCliente();
-        break;
-    case 4:
-        consultaSaldoCliente();
-        break;
-    case 5:
-        totalSaldo();
-        break;
-    case 6:
-        ordenarClientesSaldoMenorMayor();
-        break;
-    case 7:
-        ordenarClientesSaldoMayorMenor();
-        break;
-    case 8:
-        salir();
-        break;
-    default:
-        alert("Opción incorrecta!");
-        break;
-}
-*/
