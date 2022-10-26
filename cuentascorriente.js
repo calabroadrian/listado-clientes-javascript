@@ -122,7 +122,7 @@ calcularTotal();
 }
 eliminarCliente()
 
-//Eliminar un cliente:
+//Modificar un cliente:
 function modificarCliente(){
     const formularioModificarCliente = document.getElementById("formularioModificarCliente");
     const formularioOriginal = formularioModificarCliente.innerHTML
@@ -159,20 +159,6 @@ function modificarCliente(){
     
     }
     modificarCliente()
-
-function modificacionCliente() {
-    let dni = parseInt(prompt("Ingrese el DNI del cliente: "));
-    let cliente = arrayClientes.find(cliente => cliente.dni === dni);
-    let indice = arrayClientes.indexOf(cliente);
-    let nombre = prompt("Ingrese el nombre del cliente: ");
-    let apellido = prompt("Ingrese el apellido del cliente: ");
-    let saldo = parseInt(prompt("Ingrese el saldo del cliente: "));
-    let clienteModificado = new Cliente (nombre, apellido, dni, saldo);
-    arrayClientes.splice(indice, 1, clienteModificado);
-    mensaje(`El cliente ${cliente.nombre} se modifico correctamente`);
-    mostrarInfoClientes();
-
-}
 
 //Función para consultar un cliente:
 //
