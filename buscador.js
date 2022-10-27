@@ -41,7 +41,7 @@ const filtrar = () =>{
         }
         else{
             resultadoBuscador.innerHTML === '' 
-            resultadoBuscador.innerHTML += `<li>Cliente no encontrado</li>`
+            resultadoBuscador.innerHTML = `<li>Cliente no encontrado</li>`
         }
     }
     tabla.append(tablaBody);
