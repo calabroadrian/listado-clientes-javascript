@@ -39,10 +39,10 @@ const filtrar = () =>{
             </tr>
             `;
         }
-        else{
-            resultadoBuscador.innerHTML === '' 
-            resultadoBuscador.innerHTML = `<li>Cliente no encontrado</li>`
-        }
+
+    }
+    if (tablaBody.innerHTML === ''){ 
+        resultadoBuscador.innerHTML = `<li>Cliente no encontrado</li>`
     }
     tabla.append(tablaBody);
     resultadoBuscador.append(tabla);
