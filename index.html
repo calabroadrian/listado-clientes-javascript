@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/javascript/">
-    <title>Cuentas Corrientes</title>
-</head>
-<body>
-    <h1>Cuentas Corrientes</h1>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/3.3/javascript/">
+  <!-- TOASTIFY -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <title>Cuentas Corrientes</title>
+</head>
+
+
+
+<body>
+  <h1>Cuentas Corrientes</h1>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Agregar Cliente
   </button>
-  
+
   <!-- Agregar Cliente -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -26,114 +33,127 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form class="col-xl-6 col-md-12" id="formulario">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="apellido" required>
-                <label for="dni" class="form-label">DNI</label>
-                <input type="number" class="form-control" id="dni">
-                <label for="saldo" class="form-label">Saldo</label>
-                <input type="number" class="form-control" id="saldo">
-                <br>
+          <form class="col-xl-6 col-md-12" id="formulario">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" required>
+            <label for="dni" class="form-label">DNI</label>
+            <input type="number" class="form-control" id="dni">
+            <label for="saldo" class="form-label">Saldo</label>
+            <input type="number" class="form-control" id="saldo">
+            <br>
 
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
-        </form>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-    <!-- Eliminar Cliente -->
+  <!-- Eliminar Cliente -->
 
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
     Eliminar Cliente
   </button>
-  
 
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar Cliente</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form class="col-xl-6 col-md-12" id="formularioEliminarCliente">
-                    <label for="dni" class="form-label">Ingrese el DNI del Cliente que quiere borrar</label>
-                    <input type="text" class="form-control" id="dniaeliminar">
-                    <br>
-    
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
-            </form>
-            </div>
-          </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar Cliente</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="col-xl-6 col-md-12" id="formularioEliminarCliente">
+            <label for="dni" class="form-label">Ingrese el DNI del Cliente que quiere borrar</label>
+            <input type="text" class="form-control" id="dniaeliminar">
+            <br>
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
+          </form>
         </div>
       </div>
+    </div>
+  </div>
 
-    <!-- Modificar Cliente -->
+  <!-- Modificar Cliente -->
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-        Modificar Cliente
-      </button>
-      
-    
-        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel2">Modificar Saldo</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="col-xl-6 col-md-12" id="formularioModificarCliente">
-                        <label for="dni" class="form-label">Ingrese el DNI del Cliente que quiere cambiar el Saldo</label>
-                        <input type="text" class="form-control" id="dniModificar">
-                        <label for="saldo" class="form-label">Saldo</label>
-                        <input type="number" class="form-control" id="saldoModificado">
-                        <br>
-        
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Modificar Saldo</button>
-                </form>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+    Modificar Cliente
+  </button>
 
 
-        <section id="principal">
-            
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel2">Modificar Saldo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="col-xl-6 col-md-12" id="formularioModificarCliente">
+            <label for="dni" class="form-label">Ingrese el DNI del Cliente que quiere cambiar el Saldo</label>
+            <input type="text" class="form-control" id="dniModificar">
+            <label for="saldo" class="form-label">Saldo</label>
+            <input type="number" class="form-control" id="saldoModificado">
             <br>
-            <article>
-                <label>LISTADO DE CUENTAS Corrientes</label>
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Modificar Saldo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-                <h3>Buscador de Cliente</h3>
-                <hr>
-                <input type="button" value="Saldos Menor-Mayor" onClick="ordenarClientesSaldoMenorMayor()">
-                <input type="button" value="Saldos Mayor-Menor" onClick="ordenarClientesSaldoMayorMenor()">
-                <div class="container">
-                <input type="text" id="formularioBuscador" class="form-control my-2" placeholder="Ingrese el cliente que desea buscar">
-                </div>
+  <section id="principal">
+    <br>
+    <!-- Dolar Oficial -->
+    <div id="divDolar"></div>
 
-                <div class="contenedor" id="resultadoBuscador"></div>
-                <h5><span id="total"></span></h5>
-            </article>
-            <article>
-                
-                <h3>Clientes Eliminados</h3>
-                <div class="clientesEliminados" id="InfoClientes"></div>
-                <!-- Aqui tabla -->
-            </article>
-        </section>
+    <br>
+    <article>
+      <label>LISTADO DE CUENTAS Corrientes</label>
 
-        <script src="cuentascorriente.js"></script>
-        <script src="buscador.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <!-- JavaScript Bundle with Popper -->
+
+      <h3>Buscador de Cliente</h3>
+      <hr>
+      <input type="button" value="Saldos Menor-Mayor" onClick="ordenarClientesSaldoMenorMayor()">
+      <input type="button" value="Saldos Mayor-Menor" onClick="ordenarClientesSaldoMayorMenor()">
+      <div class="container">
+        <input type="text" id="formularioBuscador" class="form-control my-2"
+          placeholder="Ingrese el cliente que desea buscar">
+      </div>
+
+      <div class="contenedor" id="resultadoBuscador"></div>
+      <h5><span id="total"></span></h5>
+    </article>
+    <article>
+
+      <h3>Clientes Eliminados</h3>
+      <div class="clientesEliminados" id="InfoClientesEliminados"></div>
+      <!-- Aqui tabla -->
+    </article>
+  </section>
+  <!-- SWEET ALERT -->
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- TOASTIFY -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="cuentascorriente.js"></script>
+  <script src="buscador.js"></script>
 </body>
+
 </html>
