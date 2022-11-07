@@ -42,7 +42,7 @@ function buscadorDeCliente() {
             `;
             }
         }
-        tablaBody.innerHTML += `
+        tabla.innerHTML += `
         <tfoot>
         <tr>
           <th id="total" colspan="3">Total :</th>
@@ -53,7 +53,6 @@ function buscadorDeCliente() {
        `;
         if (tablaBody.innerHTML === '') {
             Toastify({
-                
                 text: "Cliente no Encontrado",
                 duration: 1000,
                 gravity: "bottom",
@@ -63,6 +62,7 @@ function buscadorDeCliente() {
                     background: "RED",
                 }
             }).showToast();
+
         }
         tabla.append(tablaBody);
         resultadoBuscador.append(tabla);

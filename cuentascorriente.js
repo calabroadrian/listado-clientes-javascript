@@ -21,6 +21,7 @@ const interval = setInterval(() => {
             buscadorDeCliente();
 
         })
+        .catch(error => console.error(error))
         .finally(() => console.log("Proceso Finalizado de API cotizaciones"))
     if (dolarOficial !== null) {
         clearInterval(interval);
