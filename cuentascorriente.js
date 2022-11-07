@@ -57,7 +57,7 @@ class Cliente {
 }
 
 const arrayClientes = [];
-const clienteEliminados = [];
+let clienteEliminados = [];
 
 function precargaClientes() {
     const cliente1 = new Cliente("Pia", "Tevez", 12345678, 1000);
@@ -65,7 +65,6 @@ function precargaClientes() {
     const cliente3 = new Cliente("Roberto", "Carlos", 45789865, 3000);
     const cliente4 = new Cliente("Pedro", "Capo", 33468789, 15000);
 
-    clienteEliminados.push(cliente1);
     arrayClientes.push(cliente2);
     arrayClientes.push(cliente3);
     arrayClientes.push(cliente4);
@@ -162,7 +161,7 @@ function eliminarCliente() {
     })
 
 }
-eliminarCliente()
+eliminarCliente();
 
 //Modificar un cliente:
 function modificarCliente() {
@@ -266,14 +265,14 @@ function mostrarInfoClientes(){
     const clienteTabla = document.getElementById("resultadoBuscador");
     //creamos la tabla y el tbody
     const tabla = document.createElement("table");
-    tabla.className = "table table-striped";
+    tabla.className = "table table-hover";
     const tablaBody = document.createElement("tbody");
     clienteTabla.innerHTML = "";
 
     //recorro el array de Clientes
     const clientesLocalStorage = arrayClientes;
     tabla.innerHTML += `
-    <thead>
+    <thead class="thead-dark">
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
@@ -338,4 +337,9 @@ function mostrarInfoClientesEliminados() {
     
     mostrarInfoClientesEliminados();
 
+    function eliminarHistorial(){
+		localStorage.clear();
+        clienteEliminados = [];
+        mostrarInfoClientesEliminados();
+		}
 

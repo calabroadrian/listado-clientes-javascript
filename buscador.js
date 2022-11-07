@@ -11,12 +11,12 @@ function buscadorDeCliente() {
         resultadoBuscador.innerHTML = '';
 
         let tabla = document.createElement("table");
-        tabla.className = "table table-striped";
+        tabla.className = "table table-hover";
         let tablaBody = document.createElement("tbody");
 
         const texto = formularioBuscador.value.toLowerCase();
         tabla.innerHTML += `
-    <thead>
+    <thead class="thead-dark">
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
