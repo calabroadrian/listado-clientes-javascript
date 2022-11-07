@@ -177,6 +177,7 @@ function modificarCliente() {
         const indice = arrayClientes.indexOf(clienteAmodificar);
         if (indice > -1) {
             arrayClientes[indice].saldo = saldoModificado;
+            arrayClientes[indice].saldoDolar = saldoModificado / dolarOficial;
 
             //  Guardo en el localstorage
             guardarEnLocalStorage();
@@ -210,8 +211,9 @@ function modificarCliente() {
         calcularTotal();
     })
 
+
 }
-modificarCliente()
+modificarCliente();
 
 //Función para consultar un cliente:
 //
